@@ -1,0 +1,37 @@
+<h1 class="text-center">Lançamentos!</h1>
+<!-- <ul>
+    <li *ngFor = "let lancamento of Lancamentos">
+        {{ lancamento.data }}
+    </li>
+</ul> -->
+<div class=quadro>
+<div class="p-3 mb-2 bg-secondary text-white container-fluid">
+    <table class="table bg-secondary text-white">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Data</th>
+            <th scope="col">Hora</th>
+            <th scope="col">Tipo</th>
+            <th scope="col">Localização</th>
+            </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let lancamento of lancamentos">
+            <th scope="row" >{{lancamento.id}}</th>
+            <td>{{ lancamento.data | data | date:'dd/MM/yyyy'}}</td>
+            <!-- <td>{{ lancamento.data | data }}</td>  outra opção em comentario-->
+            <!-- <td>{{ release.data | date:'dd/MM/yyyy' }}</td> -->
+            
+            <td>{{ lancamento.data | hora }}</td>
+            <td>{{ lancamento.tipo | tipo }}</td>
+            <td>
+                <a [href]="urlLocalizacao(lancamento.localizacao)" target ='_blank'>
+                    {{lancamento.localizacao}}
+                </a>
+            </td>
+          </tr>
+        </tbody>
+    </table>
+    </div>
+</div>

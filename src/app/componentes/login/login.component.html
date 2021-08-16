@@ -1,0 +1,63 @@
+
+<div class="teste">
+    <div class="p-3 mb-2 bg-secondary text-white">
+    
+        <h2 class="text-center">
+            <i class="bi bi-box-arrow-in-right"></i>
+            Login</h2>
+                
+    </div>
+    <br>
+<form [formGroup]="form" novalidate>
+  <div class="mb-3 col-md-6 offset-md-3 col-lg-4 offset-lg-4">
+    <label for="email">Email:</label>
+    <br>
+
+    <input
+      type="email"
+      id="email"
+      formControlName="email"
+      class="form-control"
+      [ngClass]="cssValidacao('email')"
+      
+    />
+    <span *ngIf="emailErroMsg()" class="invalid-feedback">
+      Email é obrigatório.
+    </span>
+  </div>
+
+  <div class="mb-3 col-md-6 offset-md-3 col-lg-4 offset-lg-4">
+    <label for="senha">Senha:</label>
+    <br>
+
+    <input
+      type="password"
+      id="senha"
+      formControlName="senha"
+      class="form-control"
+      [ngClass]="cssValidacao('senha')"
+      
+    />
+    <span
+      class="invalid-feedback"
+      *ngIf="form.controls.senha.touched && form.controls.senha.errors?.required"
+    >
+      <i class="bi-file-excel-fill"></i> A senha é obrigatória.
+    </span>
+    <span
+      class="invalid-feedback"
+      *ngIf="form.controls.senha.touched && form.controls.senha.errors?.minlength"
+    >
+      A senha deve ter 6 caracteres.
+    </span>    
+  </div>
+
+
+  <div class="mb-3 col-md-6 offset-md-3 col-lg-4 offset-lg-4 text-center">
+    <br>
+    <input type="submit" class="btn btn-secondary" value="Entrar"  (click)="logar()" >
+  </div>
+</form>
+</div>
+
+  
