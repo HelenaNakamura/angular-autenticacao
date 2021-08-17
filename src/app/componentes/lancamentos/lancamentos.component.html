@@ -4,8 +4,12 @@
         {{ lancamento.data }}
     </li>
 </ul> -->
+<p class="text-center"> Data e Hora :{{dataHoraAtual}}
+    <button (click)="atualizarDataHora()">Atualizar data</button></p>
+<p class="text-center">Data em tempor Real : {{ dataTempoReal }} </p>
 <div class=quadro>
 <div class="p-3 mb-2 bg-secondary text-white container-fluid">
+   
     <table class="table bg-secondary text-white">
         <thead>
           <tr>
