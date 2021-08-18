@@ -48,4 +48,8 @@ export class LancamentosComponent implements OnInit, OnDestroy {
   atualizarDataHora(){
     this.dataHoraService.atualizarDataHora();
   }
+
+  downloadCSV() {
+    this.lancamentoService.downloadCSV(this.lancamentos);
+  }
 }
